@@ -1,6 +1,3 @@
-# CMPT 258 Project 1
-#Aileen Murphy and Raziel BenReuben
-
 #Instructor class with attributes instructor ID, name, and affiliated department
 class Instructor:
     def __init__(self, ID, name, dept):
@@ -44,7 +41,6 @@ def readInstructorFile(file):
         instructors.append(Instructor(ID, name, dept))
     return instructors
 
-#Aileen Murphy
 #retrieves each line in the department file and creates Department object for each
 #adds each Department object to list of departments
 def readDepartmentFile(file):
@@ -55,7 +51,6 @@ def readDepartmentFile(file):
         departments.append(Department(dept, location, budget))
     return departments
 
-#Aileen Murphy
 #displays menu choice for user to choose from and exits if option 5 or invalid choice is chosen.      
 def getMenuChoice(instructors, departments):
     end = False
@@ -77,7 +72,6 @@ def getMenuChoice(instructors, departments):
             end = True
             print("\nExiting menu... have a nice day!")
 
-#Raziel BenReuben
 #searches list of Instructor objects for matching instructor ID
 #displays information of Instructor and corresponding Department if ID exists
 def option1(instructors, departments):
@@ -94,7 +88,6 @@ def option1(instructors, departments):
     if not does_exist:
         print("\nThe ID does not appear in the file.\n")
 
-#Raziel BenReuben
 #searches list of Department objects for matching department name
 #displays location, budget, and names of all instructors that work for department if department exists
 def option2(instructors, departments):
@@ -113,7 +106,6 @@ def option2(instructors, departments):
     if not not_present:
         print("The department name does not appear in the file.\n")
 
-#Aileen Murphy
 #allows for input from user and writes information to instructor file if the department exists and the instructor ID
 #is not already in the file
 def option3(instructors, departments):
@@ -137,7 +129,6 @@ def option3(instructors, departments):
         instructors.append(Instructor(instructorId, instructorName, departmentName))
         print("Your record has been stored.\n")
 
-#Aileen Murphy
 #allows for input from user to enter instructor ID to delete corresponding information in instructor file
 #if the ID already exists in the file.
 def option4(instructors, departments):
@@ -159,13 +150,12 @@ def option4(instructors, departments):
         instructorFile.close()
         print("Your record has been deleted.\n")
         
-#Aileen Murphy
 #main method that reads in instructor and department files and calls menu function       
 def main():
-    instructorFile = open('/Users/aileenmurphy/Documents/CMPT_258/instructor.txt', 'r')   #reads in instructor file
+    instructorFile = open('/Users/aileenmurphy/Documents/instructor.txt', 'r')   #reads in instructor file
     instructors = readInstructorFile(instructorFile)
     instructorFile.close()
-    departmentFile = open('/Users/aileenmurphy/Documents/CMPT_258/department.txt', 'r')   #reads in department file
+    departmentFile = open('/Users/aileenmurphy/Documents/department.txt', 'r')   #reads in department file
     departments = readDepartmentFile(departmentFile)
     departmentFile.close()
     getMenuChoice(instructors, departments)   
