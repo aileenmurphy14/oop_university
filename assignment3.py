@@ -123,7 +123,7 @@ def option3(instructors, departments):
             print("Instructor ID already exists in the file.\n")
             instIdExists = True
     if deptExists == True and instIdExists == False:
-        instructorFile = open('/Users/aileenmurphy/Documents/CMPT_258/instructor.txt', 'a')   #appends to end of .txt file
+        instructorFile = open('/Users/aileenmurphy/Documents/instructor.txt', 'a')   #appends to end of .txt file
         instructorFile.write("\n" + instructorId + ',' + instructorName + ',' + departmentName)
         instructorFile.close()
         instructors.append(Instructor(instructorId, instructorName, departmentName))
@@ -144,7 +144,7 @@ def option4(instructors, departments):
     if idExists == False:
         print("The ID does not appear in the file.\n")
     else:
-        instructorFile = open('/Users/aileenmurphy/Documents/CMPT_258/instructor.txt', 'w')   #writes to .txt file
+        instructorFile = open('/Users/aileenmurphy/Documents/instructor.txt', 'w')   #writes to .txt file
         for l in lines:
             instructorFile.write(l.get_id() + ',' + l.get_name() + ',' + l.get_dept() + '\n')
         instructorFile.close()
